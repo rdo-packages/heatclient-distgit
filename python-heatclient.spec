@@ -9,7 +9,7 @@ URL:     http://pypi.python.org/pypi/python-heatclient
 Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
-# patches_base=0.2.9
+# patches_base=0.2.10
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
@@ -68,8 +68,8 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 echo "%{version}" > %{buildroot}%{python_sitelib}/heatclient/versioninfo
 
 # Install bash completion scripts
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
-install -m 644 -T tools/heat.bash_completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/python-heatclient
+mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d/
+install -m 644 -T tools/heat.bash_completion %{buildroot}%{_sysconfdir}/bash_completion.d/python-heatclient
 
 # Delete tests
 rm -fr %{buildroot}%{python_sitelib}/heatclient/tests
@@ -85,7 +85,7 @@ rm -fr html/.doctrees html/.buildinfo
 %{_bindir}/heat
 %{python_sitelib}/heatclient
 %{python_sitelib}/*.egg-info
-%{_sysconfdir}/bash_completion.d}
+%{_sysconfdir}/bash_completion.d/python-heatclient
 
 %files doc
 %doc html
