@@ -1,6 +1,6 @@
 Name:    python-heatclient
-Version: 0.2.9
-Release: 2%{?dist}
+Version: 0.2.10
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
@@ -67,6 +67,10 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 echo "%{version}" > %{buildroot}%{python_sitelib}/heatclient/versioninfo
 
+# Install bash completion scripts
+mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
+install -m 644 -T tools/heat.bash_completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/python-heatclient
+
 # Delete tests
 rm -fr %{buildroot}%{python_sitelib}/heatclient/tests
 
@@ -81,11 +85,16 @@ rm -fr html/.doctrees html/.buildinfo
 %{_bindir}/heat
 %{python_sitelib}/heatclient
 %{python_sitelib}/*.egg-info
+%{_sysconfdir}/bash_completion.d}
 
 %files doc
 %doc html
 
 %changelog
+* Thu Sep 18 2014 Ryan Brown <rybrown@redhat.com> - 0.2.10-1
+- Bump to new (0.2.10) client release
+- Include bash completion file (rhbz #1140842)
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.9-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
