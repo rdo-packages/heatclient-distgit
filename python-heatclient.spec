@@ -39,6 +39,7 @@ Summary: Documentation for OpenStack Heat API Client
 Group:   Documentation
 
 BuildRequires: python-sphinx
+BuildRequires: git
 
 %description doc
 This is a client for the OpenStack Heat API. There's a Python API (the
@@ -93,6 +94,7 @@ rm -fr html/.doctrees html/.buildinfo
 %changelog
 * Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-1
 - Bump to new (0.2.11) client release
+- Add git to BuildRequires
 
 * Thu Sep 18 2014 Ryan Brown <rybrown@redhat.com> - 0.2.10-1
 - Bump to new (0.2.10) client release
