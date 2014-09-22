@@ -1,5 +1,5 @@
 Name:    python-heatclient
-Version: 0.2.10
+Version: 0.2.11
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -9,7 +9,7 @@ URL:     http://pypi.python.org/pypi/python-heatclient
 Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
-# patches_base=0.2.10
+# patches_base=0.2.11
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
@@ -91,6 +91,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-1
+- Bump to new (0.2.11) client release
+
 * Thu Sep 18 2014 Ryan Brown <rybrown@redhat.com> - 0.2.10-1
 - Bump to new (0.2.10) client release
 - Include bash completion file (rhbz #1140842)
