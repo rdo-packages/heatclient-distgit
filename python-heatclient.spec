@@ -13,6 +13,7 @@ Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
+Patch0003: 0003-patch-import-name-for-python-oslo-sphinx.patch
 
 BuildArch: noarch
 
@@ -39,6 +40,7 @@ Summary: Documentation for OpenStack Heat API Client
 Group:   Documentation
 
 BuildRequires: python-sphinx
+BuildRequires: python-oslo-sphinx
 BuildRequires: git
 
 %description doc
@@ -53,6 +55,7 @@ This package contains auto-generated documentation.
 
 %patch0001 -p1
 %patch0002 -p1
+%patch0003 -p1
 
 # We provide version like this in order to remove runtime dep on pbr.
 sed -i s/REDHATHEATCLIENTVERSION/%{version}/ heatclient/__init__.py
