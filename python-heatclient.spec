@@ -1,6 +1,6 @@
 Name:    python-heatclient
 Version: 0.2.11
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
@@ -13,7 +13,6 @@ Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
-Patch0003: 0003-patch-import-name-for-python-oslo-sphinx.patch
 
 BuildArch: noarch
 
@@ -55,10 +54,13 @@ This package contains auto-generated documentation.
 
 %patch0001 -p1
 %patch0002 -p1
-%patch0003 -p1
 
 # We provide version like this in order to remove runtime dep on pbr.
 sed -i s/REDHATHEATCLIENTVERSION/%{version}/ heatclient/__init__.py
+
+# Until Oslo's new namespace (oslosphinx) propagates into yum packages we need
+# to fix its import name
+sed -i s/oslosphinx/oslo.sphinx/ doc/source/conf.py
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config.
@@ -95,6 +97,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-2
+- Remove patch and use sed in %prep to fix oslosphinx import instead
+
 * Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-1
 - Bump to new (0.2.11) client release
 - Add git to BuildRequires
