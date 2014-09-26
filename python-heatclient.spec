@@ -1,6 +1,6 @@
 Name:    python-heatclient
-Version: 0.2.11
-Release: 2%{?dist}
+Version: 0.2.12
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
@@ -9,7 +9,7 @@ URL:     http://pypi.python.org/pypi/python-heatclient
 Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
-# patches_base=0.2.11
+# patches_base=0.2.12
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
@@ -97,6 +97,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Thu Sep 26 2014 Ryan Brown <rybrown@redhat.com> - 0.2.12-1
+- Bump to 0.2.12 client release
+
 * Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-2
 - Remove patch and use sed in %prep to fix oslosphinx import instead
 
