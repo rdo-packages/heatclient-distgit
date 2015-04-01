@@ -1,5 +1,5 @@
 Name:    python-heatclient
-Version: 0.2.12
+Version: 0.4.0
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -7,12 +7,6 @@ Group:   Development/Languages
 License: ASL 2.0
 URL:     http://pypi.python.org/pypi/python-heatclient
 Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
-
-#
-# patches_base=0.2.12
-#
-Patch0001: 0001-Nuke-pbr-requirements-handling.patch
-Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
 
 BuildArch: noarch
 
@@ -25,9 +19,15 @@ Requires: python-argparse
 Requires: python-httplib2
 Requires: python-iso8601
 Requires: python-keystoneclient
+Requires: python-oslo-i18n
+Requires: python-oslo-serialization
+Requires: python-oslo-utils
 Requires: python-prettytable
 Requires: python-six
+Requires: python-swiftclient
 Requires: PyYAML
+Requires: python-babel
+
 
 %description
 This is a client for the OpenStack Heat API. There's a Python API (the
@@ -52,26 +52,16 @@ This package contains auto-generated documentation.
 %prep
 %setup -q
 
-%patch0001 -p1
-%patch0002 -p1
-
-# We provide version like this in order to remove runtime dep on pbr.
-sed -i s/REDHATHEATCLIENTVERSION/%{version}/ heatclient/__init__.py
-
-# Until Oslo's new namespace (oslosphinx) propagates into yum packages we need
-# to fix its import name
-sed -i s/oslosphinx/oslo.sphinx/ doc/source/conf.py
-
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config.
 rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 
 %build
-%{__python} setup.py build
+%{__python2} setup.py build
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
-echo "%{version}" > %{buildroot}%{python_sitelib}/heatclient/versioninfo
+%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
+echo "%{version}" > %{buildroot}%{python2_sitelib}/heatclient/versioninfo
 
 # Install bash completion scripts
 mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d/
@@ -89,14 +79,17 @@ rm -fr html/.doctrees html/.buildinfo
 %files
 %doc LICENSE README.rst
 %{_bindir}/heat
-%{python_sitelib}/heatclient
-%{python_sitelib}/*.egg-info
+%{python2_sitelib}/heatclient
+%{python2_sitelib}/*.egg-info
 %{_sysconfdir}/bash_completion.d/python-heatclient
 
 %files doc
 %doc html
 
 %changelog
+* Wed Apr 01 2015 Haikel Guemar <hguemar@fedoraproject.org> 0.4.0-1
+- Update to upstream 0.4.0
+
 * Thu Sep 26 2014 Ryan Brown <rybrown@redhat.com> - 0.2.12-1
 - Bump to 0.2.12 client release
 
