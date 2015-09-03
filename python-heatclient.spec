@@ -23,8 +23,12 @@ Requires: python-oslo-i18n
 Requires: python-oslo-serialization
 Requires: python-oslo-utils
 Requires: python-prettytable
+Requires: python-pbr
 Requires: python-six
 Requires: python-swiftclient
+Requires: python-oslo-serialization
+Requires: python-oslo-utils
+Requires: python-oslo-i18n
 Requires: PyYAML
 Requires: python-babel
 
@@ -68,7 +72,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d/
 install -m 644 -T tools/heat.bash_completion %{buildroot}%{_sysconfdir}/bash_completion.d/python-heatclient
 
 # Delete tests
-rm -fr %{buildroot}%{python_sitelib}/heatclient/tests
+rm -fr %{buildroot}%{python2_sitelib}/heatclient/tests
 
 export PYTHONPATH="$( pwd ):$PYTHONPATH"
 sphinx-build -b html doc/source html
