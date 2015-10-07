@@ -1,5 +1,5 @@
 Name:    python-heatclient
-Version: 0.7.0
+Version: 0.8.0
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -91,6 +91,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Thu Oct 08 2015 Alan Pevec <alan.pevec@redhat.com> 0.8.0-1
+- Update to upstream 0.8.0
+
 * Thu Sep 03 2015 Ryan Brown <rybrown@redhat.com> 0.7.0-1
 - Update to upstream 0.7.0
 
