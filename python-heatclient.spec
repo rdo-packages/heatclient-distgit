@@ -106,11 +106,11 @@ rm -fr html/.doctrees html/.buildinfo
 * Wed Apr 01 2015 Haikel Guemar <hguemar@fedoraproject.org> 0.4.0-1
 - Update to upstream 0.4.0
 
-* Thu Sep 26 2014 Ryan Brown <rybrown@redhat.com> - 0.2.12-1
+* Fri Sep 26 2014 Ryan Brown <rybrown@redhat.com> - 0.2.12-1
 - Bump to 0.2.12 client release
 
 * Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-2
-- Remove patch and use sed in %prep to fix oslosphinx import instead
+- Remove patch and use sed in prep to fix oslosphinx import instead
 
 * Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-1
 - Bump to new (0.2.11) client release
