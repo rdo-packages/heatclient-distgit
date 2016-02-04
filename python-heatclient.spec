@@ -1,6 +1,6 @@
 Name:    python-heatclient
 Version: 0.8.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
@@ -91,6 +91,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Thu Oct 08 2015 Alan Pevec <alan.pevec@redhat.com> 0.8.0-1
 - Update to upstream 0.8.0
 
