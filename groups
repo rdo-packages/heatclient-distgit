@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-66bc03983908f8379d61fb327aed9badd08a5f2f       	heatclient-distgit-core
-13926464b9867facedc70c4b7761a2f26465b484        	heatclient-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+13926464b9867facedc70c4b7761a2f26465b484	openstack/heatclient-distgit-ptl
+66bc03983908f8379d61fb327aed9badd08a5f2f	heatclient-distgit-core
+global:Registered-Users                 	Registered Users
