@@ -8,7 +8,7 @@
 
 Name:    python-heatclient
 Version: 1.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
@@ -33,7 +33,6 @@ Requires: python-babel
 Requires: python-cliff
 Requires: python-iso8601
 Requires: python-keystoneauth1
-Requires: python-osc-lib
 Requires: python-prettytable
 Requires: python-pbr
 Requires: python-six
@@ -62,7 +61,6 @@ Requires: python3-babel
 Requires: python3-cliff
 Requires: python3-iso8601
 Requires: python3-keystoneauth1
-Requires: python3-osc-lib
 Requires: python3-prettytable
 Requires: python3-pbr
 Requires: python3-six
@@ -168,6 +166,9 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+* Wed Jul 27 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1.1.0-2
+- Remove dependency to python-osc-lib (not in Mitaka)
+
 * Wed Jul 27 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.1.0-1
 - Update to 1.1.0
 - Add python3 subpackage (RHBZ#1263882)
