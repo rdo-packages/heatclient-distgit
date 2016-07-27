@@ -33,7 +33,6 @@ Requires: python-babel
 Requires: python-cliff
 Requires: python-iso8601
 Requires: python-keystoneauth1
-Requires: python-osc-lib
 Requires: python-prettytable
 Requires: python-pbr
 Requires: python-six
@@ -62,7 +61,6 @@ Requires: python3-babel
 Requires: python3-cliff
 Requires: python3-iso8601
 Requires: python3-keystoneauth1
-Requires: python3-osc-lib
 Requires: python3-prettytable
 Requires: python3-pbr
 Requires: python3-six
