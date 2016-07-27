@@ -7,7 +7,7 @@
 %endif
 
 Name:    python-heatclient
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -168,5 +168,9 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+* Wed Jul 27 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.1.0-1
+- Update to 1.1.0
+- Add python3 subpackage (RHBZ#1263882)
+
 * Wed Mar 23 2016 RDO <rdo-list@redhat.com> 1.0.0-0.1
  -  Rebuild for Mitaka 
