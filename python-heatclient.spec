@@ -7,8 +7,8 @@
 %endif
 
 Name:    python-heatclient
-Version: XXX
-Release: XXX
+Version: 1.4.0
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
@@ -168,3 +168,6 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+* Mon Sep 12 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.4.0-1
+- Update to 1.4.0
+
