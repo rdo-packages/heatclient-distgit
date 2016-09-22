@@ -7,7 +7,7 @@
 %endif
 
 Name:    python-heatclient
-Version: 1.4.0
+Version: 1.5.0
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -168,6 +168,9 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+* Thu Sep 22 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.5.0-1
+- Update to 1.5.0
+
 * Mon Sep 12 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.4.0-1
 - Update to 1.4.0
 
