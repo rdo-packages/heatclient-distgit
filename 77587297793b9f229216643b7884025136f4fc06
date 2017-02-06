@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_58941237",
+        "filename": "python-heatclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-02-06T10:15:55Z",
+      "side": 1,
+      "message": "python-keystoneclient is not longer a dependency of python-heatclient. Please remove it in a new patchset.https://github.com/openstack/python-heatclient/blob/stable/ocata/requirements.txt",
+      "revId": "77587297793b9f229216643b7884025136f4fc06",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
