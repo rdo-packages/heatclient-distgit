@@ -32,16 +32,15 @@ BuildRequires: python-pbr
 Requires: python-babel
 Requires: python-cliff
 Requires: python-iso8601
-Requires: python-keystoneauth1
-Requires: python-osc-lib
+Requires: python-keystoneauth1 >= 2.18.0
+Requires: python-osc-lib >= 1.2.0
 Requires: python-prettytable
 Requires: python-pbr
 Requires: python-six
-Requires: python-oslo-serialization
-Requires: python-oslo-utils
-Requires: python-oslo-i18n
-Requires: python-keystoneclient
-Requires: python-swiftclient
+Requires: python-oslo-serialization >= 1.10.0
+Requires: python-oslo-utils >= 3.18.0
+Requires: python-oslo-i18n >= 2.1.0
+Requires: python-swiftclient >= 3.2.0
 Requires: python-requests
 Requires: PyYAML
 
@@ -61,16 +60,15 @@ BuildRequires: python3-pbr
 Requires: python3-babel
 Requires: python3-cliff
 Requires: python3-iso8601
-Requires: python3-keystoneauth1
-Requires: python3-osc-lib
+Requires: python3-keystoneauth1 >= 2.18.0
+Requires: python3-osc-lib >= 1.2.0
 Requires: python3-prettytable
 Requires: python3-pbr
 Requires: python3-six
-Requires: python3-oslo-serialization
-Requires: python3-oslo-utils
-Requires: python3-oslo-i18n
-Requires: python3-keystoneclient
-Requires: python3-swiftclient
+Requires: python3-oslo-serialization >= 1.10.0
+Requires: python3-oslo-utils >= 3.18.0
+Requires: python3-oslo-i18n >= 2.1.0
+Requires: python3-swiftclient >= 3.2.0
 Requires: python3-requests
 Requires: python3-PyYAML
 
