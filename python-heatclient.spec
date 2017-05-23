@@ -7,8 +7,8 @@
 %endif
 
 Name:    python-heatclient
-Version: 1.1.0
-Release: 2%{?dist}
+Version: 1.1.1
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
@@ -166,6 +166,9 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+* Tue May 23 2017 Alfredo Moralejo <amoralej@redhat.com> 1.1.1-1
+- Update to 1.1.1
+
 * Wed Jul 27 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1.1.0-2
 - Remove dependency to python-osc-lib (not in Mitaka)
 
