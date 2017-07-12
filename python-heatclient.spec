@@ -166,3 +166,4 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-heatclient/commit/?id=5da87fc6d49ea5a70096f856cefe40dc3a9d9f0e
