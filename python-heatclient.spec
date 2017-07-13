@@ -28,6 +28,7 @@ Summary: Python API and CLI for OpenStack Heat
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
+BuildRequires: git
 
 Requires: python-babel
 Requires: python-cliff
@@ -82,7 +83,7 @@ the OpenStack Heat API.
 Summary: Documentation for OpenStack Heat API Client
 
 BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx
+BuildRequires: python-openstackdocstheme
 
 %description doc
 This is a client for the OpenStack Heat API. There's a Python API (the
@@ -92,7 +93,7 @@ the OpenStack Heat API.
 This package contains auto-generated documentation.
 
 %prep
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 
 rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 
@@ -128,15 +129,13 @@ install -pm 644 tools/heat.bash_completion \
 rm -fr %{buildroot}%{python2_sitelib}/heatclient/tests
 
 
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-sphinx-build -b html doc/source html
+%{__python2} setup.py build_sphinx -b html
+# Fix hidden-file-or-dir warnings
+rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 
 # generate man page
-sphinx-build -b man doc/source man
-install -p -D -m 644 man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
-
-# Fix hidden-file-or-dir warnings
-rm -fr html/.doctrees html/.buildinfo
+%{__python2} setup.py build_sphinx -b man
+install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 
 %files -n python2-%{sname}
 %doc README.rst
@@ -162,7 +161,7 @@ rm -fr html/.doctrees html/.buildinfo
 %endif
 
 %files doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 
 %changelog
