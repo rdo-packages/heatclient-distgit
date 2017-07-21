@@ -7,7 +7,7 @@
 %endif
 
 Name:    python-heatclient
-Version: 1.5.1
+Version: 1.5.2
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -168,6 +168,9 @@ rm -fr html/.doctrees html/.buildinfo
 %license LICENSE
 
 %changelog
+* Fri Jul 21 2017 rdo-trunk <javier.pena@redhat.com> 1.5.2-1
+- Update to 1.5.2
+
 * Tue May 23 2017 rdo-trunk <javier.pena@redhat.com> 1.5.1-1
 - Update to 1.5.1
 
