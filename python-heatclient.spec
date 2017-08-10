@@ -165,3 +165,4 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-heatclient/commit/?id=804ab3e552771a50bbef3dfacdec0d1fa0573406
