@@ -12,7 +12,7 @@ Release: XXX
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
-URL:     https://launchpad.net/python-heatclientclient
+URL:     https://launchpad.net/python-heatclient
 Source0: https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 
 BuildArch: noarch
