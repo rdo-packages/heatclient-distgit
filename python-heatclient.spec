@@ -7,8 +7,8 @@
 %endif
 
 Name:    python-heatclient
-Version: XXX
-Release: XXX
+Version: 1.11.0
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
@@ -165,3 +165,6 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %license LICENSE
 
 %changelog
+* Mon Aug 14 2017 Alfredo Moralejo <amoralej@redhat.com> 1.11.0-1
+- Update to 1.11.0
+
