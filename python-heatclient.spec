@@ -83,6 +83,7 @@ Summary: Documentation for OpenStack Heat API Client
 
 BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
+BuildRequires: openstack-macros
 
 %description doc
 %{common_desc}
@@ -92,7 +93,7 @@ This package contains auto-generated documentation.
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
 
-rm -rf {test-,}requirements.txt tools/{pip,test}-requires
+%py_req_cleanup
 
 
 %build
