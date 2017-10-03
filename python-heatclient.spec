@@ -6,6 +6,11 @@
 %global with_python3 1
 %endif
 
+%global common_desc \
+This is a client for the OpenStack Heat API. There's a Python API (the \
+heatclient module), and a command-line script (heat). Each implements 100% of \
+the OpenStack Heat API.
+
 Name:    python-heatclient
 Version: XXX
 Release: XXX
@@ -18,9 +23,7 @@ Source0: https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.
 BuildArch: noarch
 
 %description
-This is a client for the OpenStack Heat API. There's a Python API (the
-heatclient module), and a command-line script (heat). Each implements 100% of
-the OpenStack Heat API.
+%{common_desc}
 
 %package -n python2-%{sname}
 Summary: Python API and CLI for OpenStack Heat
@@ -46,9 +49,7 @@ Requires: python-requests
 Requires: PyYAML
 
 %description -n python2-%{sname}
-This is a client for the OpenStack Heat API. There's a Python API (the
-heatclient module), and a command-line script (heat). Each implements 100% of
-the OpenStack Heat API.
+%{common_desc}
 
 %if 0%{?with_python3}
 %package -n python3-%{sname}
@@ -74,9 +75,7 @@ Requires: python3-requests
 Requires: python3-PyYAML
 
 %description -n python3-%{sname}
-This is a client for the OpenStack Heat API. There's a Python API (the
-heatclient module), and a command-line script (heat). Each implements 100% of
-the OpenStack Heat API.
+%{common_desc}
 %endif
 
 %package doc
@@ -86,9 +85,7 @@ BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
 
 %description doc
-This is a client for the OpenStack Heat API. There's a Python API (the
-heatclient module), and a command-line script (heat). Each implements 100% of
-the OpenStack Heat API.
+%{common_desc}
 
 This package contains auto-generated documentation.
 
