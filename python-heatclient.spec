@@ -29,24 +29,29 @@ BuildArch: noarch
 Summary: Python API and CLI for OpenStack Heat
 %{?python_provide:%python_provide python2-heatclient}
 BuildRequires: python2-devel
-BuildRequires: python-setuptools
-BuildRequires: python-pbr
+BuildRequires: python2-setuptools
+BuildRequires: python2-pbr
 BuildRequires: git
 
-Requires: python-babel
+Requires: python2-babel
+Requires: python2-iso8601
+Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-osc-lib >= 1.8.0
+Requires: python2-prettytable
+Requires: python2-pbr
+Requires: python2-six
+Requires: python2-oslo-serialization >= 2.18.0
+Requires: python2-oslo-utils >= 3.33.0
+Requires: python2-oslo-i18n >= 3.15.3
+Requires: python2-swiftclient >= 3.2.0
+Requires: python2-requests
+%if 0%{?fedora} > 0
+Requires: python2-cliff
+Requires: python2-pyyaml
+%else
 Requires: python-cliff
-Requires: python-iso8601
-Requires: python-keystoneauth1 >= 3.0.1
-Requires: python-osc-lib >= 1.7.0
-Requires: python-prettytable
-Requires: python-pbr
-Requires: python-six
-Requires: python-oslo-serialization >= 1.10.0
-Requires: python-oslo-utils >= 3.20.0
-Requires: python-oslo-i18n >= 2.1.0
-Requires: python-swiftclient >= 3.2.0
-Requires: python-requests
 Requires: PyYAML
+%endif
 
 %description -n python2-%{sname}
 %{common_desc}
@@ -62,14 +67,14 @@ BuildRequires: python3-pbr
 Requires: python3-babel
 Requires: python3-cliff
 Requires: python3-iso8601
-Requires: python3-keystoneauth1 >= 3.0.1
-Requires: python3-osc-lib >= 1.7.0
+Requires: python3-keystoneauth1 >= 3.3.0
+Requires: python3-osc-lib >= 1.8.0
 Requires: python3-prettytable
 Requires: python3-pbr
 Requires: python3-six
-Requires: python3-oslo-serialization >= 1.10.0
-Requires: python3-oslo-utils >= 3.20.0
-Requires: python3-oslo-i18n >= 2.1.0
+Requires: python3-oslo-serialization >= 2.18.0
+Requires: python3-oslo-utils >= 3.33.0
+Requires: python3-oslo-i18n >= 3.15.3
 Requires: python3-swiftclient >= 3.2.0
 Requires: python3-requests
 Requires: python3-PyYAML
@@ -81,8 +86,8 @@ Requires: python3-PyYAML
 %package doc
 Summary: Documentation for OpenStack Heat API Client
 
-BuildRequires: python-sphinx
-BuildRequires: python-openstackdocstheme
+BuildRequires: python2-sphinx
+BuildRequires: python2-openstackdocstheme
 
 %description doc
 %{common_desc}
