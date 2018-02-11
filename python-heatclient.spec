@@ -12,8 +12,8 @@ heatclient module), and a command-line script (heat). Each implements 100% of \
 the OpenStack Heat API.
 
 Name:    python-heatclient
-Version: XXX
-Release: XXX
+Version: 1.14.0
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
@@ -45,11 +45,10 @@ Requires: python2-oslo-utils >= 3.33.0
 Requires: python2-oslo-i18n >= 3.15.3
 Requires: python2-swiftclient >= 3.2.0
 Requires: python2-requests
-%if 0%{?fedora} > 0
 Requires: python2-cliff
+%if 0%{?fedora} > 0
 Requires: python2-pyyaml
 %else
-Requires: python-cliff
 Requires: PyYAML
 %endif
 
@@ -88,6 +87,7 @@ Summary: Documentation for OpenStack Heat API Client
 
 BuildRequires: python2-sphinx
 BuildRequires: python2-openstackdocstheme
+BuildRequires: python2-oslo-utils
 
 %description doc
 %{common_desc}
@@ -167,3 +167,6 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %license LICENSE
 
 %changelog
+* Sun Feb 11 2018 RDO <dev@lists.rdoproject.org> 1.14.0-1
+- Update to 1.14.0
+
