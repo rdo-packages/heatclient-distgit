@@ -12,8 +12,8 @@ heatclient module), and a command-line script (heat). Each implements 100% of \
 the OpenStack Heat API.
 
 Name:    python-heatclient
-Version: XXX
-Release: XXX
+Version: 1.14.0
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
@@ -167,3 +167,6 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %license LICENSE
 
 %changelog
+* Sun Feb 11 2018 RDO <dev@lists.rdoproject.org> 1.14.0-1
+- Update to 1.14.0
+
