@@ -45,11 +45,10 @@ Requires: python2-oslo-utils >= 3.33.0
 Requires: python2-oslo-i18n >= 3.15.3
 Requires: python2-swiftclient >= 3.2.0
 Requires: python2-requests
-%if 0%{?fedora} > 0
 Requires: python2-cliff
+%if 0%{?fedora} > 0
 Requires: python2-pyyaml
 %else
-Requires: python-cliff
 Requires: PyYAML
 %endif
 
@@ -88,6 +87,19 @@ Summary: Documentation for OpenStack Heat API Client
 
 BuildRequires: python2-sphinx
 BuildRequires: python2-openstackdocstheme
+BuildRequires: python2-babel
+BuildRequires: python2-iso8601
+BuildRequires: python2-keystoneauth1
+BuildRequires: python2-osc-lib
+BuildRequires: python2-prettytable
+BuildRequires: python2-pbr
+BuildRequires: python2-six
+BuildRequires: python2-oslo-serialization
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-oslo-i18n
+BuildRequires: python2-swiftclient
+BuildRequires: python2-requests
+BuildRequires: python2-cliff
 
 %description doc
 %{common_desc}
