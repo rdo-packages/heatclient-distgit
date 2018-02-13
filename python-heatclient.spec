@@ -1,4 +1,4 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+z%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname heatclient
 
@@ -45,11 +45,10 @@ Requires: python2-oslo-utils >= 3.33.0
 Requires: python2-oslo-i18n >= 3.15.3
 Requires: python2-swiftclient >= 3.2.0
 Requires: python2-requests
-%if 0%{?fedora} > 0
 Requires: python2-cliff
+%if 0%{?fedora} > 0
 Requires: python2-pyyaml
 %else
-Requires: python-cliff
 Requires: PyYAML
 %endif
 
@@ -88,6 +87,7 @@ Summary: Documentation for OpenStack Heat API Client
 
 BuildRequires: python2-sphinx
 BuildRequires: python2-openstackdocstheme
+BuildRequires: python2-oslo-utils
 
 %description doc
 %{common_desc}
