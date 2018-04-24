@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_029bf0ca",
+        "filename": "python-heatclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-04-24T16:47:58Z",
+      "side": 1,
+      "message": "export PYTHONPATH\u003d.",
+      "revId": "469d33a49c94dae59d3117e2c67041f05e1a9a8f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
