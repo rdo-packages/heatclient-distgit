@@ -143,12 +143,13 @@ install -pm 644 tools/heat.bash_completion \
 rm -fr %{buildroot}%{python2_sitelib}/heatclient/tests
 
 
-%{__python2} setup.py build_sphinx -b html
+export PYTHONPATH=.
+sphinx-build -W -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 
 # generate man page
-%{__python2} setup.py build_sphinx -b man
+sphinx-build -W -b man doc/source doc/build/man
 install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 
 %files -n python2-%{sname}
