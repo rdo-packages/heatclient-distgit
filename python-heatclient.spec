@@ -35,7 +35,7 @@ BuildRequires: git
 
 Requires: python2-babel
 Requires: python2-iso8601
-Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-keystoneauth1 >= 3.4.0
 Requires: python2-osc-lib >= 1.8.0
 Requires: python2-prettytable
 Requires: python2-pbr
@@ -66,7 +66,7 @@ BuildRequires: python3-pbr
 Requires: python3-babel
 Requires: python3-cliff
 Requires: python3-iso8601
-Requires: python3-keystoneauth1 >= 3.3.0
+Requires: python3-keystoneauth1 >= 3.4.0
 Requires: python3-osc-lib >= 1.8.0
 Requires: python3-prettytable
 Requires: python3-pbr
