@@ -10,6 +10,7 @@
 %global pyver_build %py%{pyver}_build
 # End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%global with_doc 1
 
 %global sname heatclient
 
@@ -67,6 +68,7 @@ Requires: python%{pyver}-PyYAML
 %description -n python%{pyver}-%{sname}
 %{common_desc}
 
+%if 0%{?with_doc}
 %package doc
 Summary: Documentation for OpenStack Heat API Client
 
@@ -90,6 +92,7 @@ BuildRequires: python%{pyver}-cliff
 %{common_desc}
 
 This package contains auto-generated documentation.
+%endif
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -113,7 +116,7 @@ install -pm 644 tools/heat.bash_completion \
 # Delete tests
 rm -fr %{buildroot}%{pyver_sitelib}/heatclient/tests
 
-
+%if 0%{?with_doc}
 export PYTHONPATH=.
 sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
@@ -122,6 +125,7 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 # generate man page
 sphinx-build-%{pyver} -W -b man doc/source doc/build/man
 install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
+%endif
 
 %files -n python%{pyver}-%{sname}
 %doc README.rst
@@ -129,12 +133,16 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %{pyver_sitelib}/heatclient
 %{pyver_sitelib}/*.egg-info
 %{_sysconfdir}/bash_completion.d
+%if 0%{?with_doc}
 %{_mandir}/man1/heat.1.gz
+%endif
 %{_bindir}/heat
 %{_bindir}/heat-%{pyver}
 
+%if 0%{?with_doc}
 %files doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
