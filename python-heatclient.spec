@@ -12,7 +12,7 @@ heatclient module), and a command-line script (heat). Each implements 100% of \
 the OpenStack Heat API.
 
 Name:    python-heatclient
-Version: 1.16.1
+Version: 1.16.2
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -180,6 +180,9 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %license LICENSE
 
 %changelog
+* Thu Mar 28 2019 RDO <dev@lists.rdoproject.org> 1.16.2-1
+- Update to 1.16.2
+
 * Fri Aug 10 2018 RDO <dev@lists.rdoproject.org> 1.16.1-1
 - Update to 1.16.1
 
