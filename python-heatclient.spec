@@ -7,7 +7,7 @@
 %endif
 
 Name:    python-heatclient
-Version: 1.11.1
+Version: 1.11.2
 Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
@@ -165,6 +165,9 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %license LICENSE
 
 %changelog
+* Thu May 16 2019 RDO <dev@lists.rdoproject.org> 1.11.2-1
+- Update to 1.11.2
+
 * Mon Oct 30 2017 rdo-trunk <javier.pena@redhat.com> 1.11.1-1
 - Update to 1.11.1
 
