@@ -1,3 +1,5 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
 
@@ -10,14 +12,25 @@ the OpenStack Heat API.
 
 Name:    python-heatclient
 Version: 2.2.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 License: ASL 2.0
 URL:     https://launchpad.net/python-heatclient
 Source0: https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 
 BuildArch: noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+BuildRequires:  openstack-macros
+%endif
 
 %description
 %{common_desc}
@@ -77,6 +90,10 @@ This package contains auto-generated documentation.
 %endif
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %autosetup -n %{name}-%{upstream_version} -S git
 
 rm -rf {test-,}requirements.txt tools/{pip,test}-requires
@@ -128,6 +145,9 @@ install -p -D -m 644 doc/build/man/heat.1 %{buildroot}%{_mandir}/man1/heat.1
 %endif
 
 %changelog
+* Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 2.2.1-2
+- Enable sources tarball validation using GPG signature.
+
 * Fri Sep 18 2020 RDO <dev@lists.rdoproject.org> 2.2.1-1
 - Update to 2.2.1
 
