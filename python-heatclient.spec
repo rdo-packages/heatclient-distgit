@@ -43,7 +43,7 @@ Obsoletes: python2-%{sname} < %{version}-%{release}
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
-BuildRequires: git
+BuildRequires: git-core
 
 Requires: python3-babel
 Requires: python3-iso8601
