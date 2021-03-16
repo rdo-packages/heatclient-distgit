@@ -1,0 +1,8 @@
+Workflow+1: Yatin Karel <ykarel@redhat.com>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 16 Mar 2021 07:22:46 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/heatclient-distgit/+/32406
+Project: openstack/heatclient-distgit
+Branch: refs/heads/wallaby-rdo
