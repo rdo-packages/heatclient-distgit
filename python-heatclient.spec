@@ -47,7 +47,7 @@ BuildRequires: git-core
 
 Requires: python3-babel
 Requires: python3-iso8601
-Requires: python3-keystoneauth1 >= 3.4.0
+Requires: python3-keystoneauth1 >= 3.8.0
 Requires: python3-osc-lib >= 1.14.0
 Requires: python3-prettytable
 Requires: python3-pbr
