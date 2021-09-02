@@ -1,0 +1,8 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Thu, 02 Sep 2021 16:52:23 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/heatclient-distgit/+/35251
+Project: openstack/heatclient-distgit
+Branch: refs/heads/rpm-master
