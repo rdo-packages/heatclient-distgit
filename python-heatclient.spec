@@ -51,7 +51,6 @@ Requires: python3-keystoneauth1 >= 3.8.0
 Requires: python3-osc-lib >= 1.14.0
 Requires: python3-prettytable
 Requires: python3-pbr
-Requires: python3-six
 Requires: python3-oslo-serialization >= 2.18.0
 Requires: python3-oslo-utils >= 3.33.0
 Requires: python3-oslo-i18n >= 3.15.3
@@ -75,7 +74,6 @@ BuildRequires: python3-keystoneauth1
 BuildRequires: python3-osc-lib
 BuildRequires: python3-prettytable
 BuildRequires: python3-pbr
-BuildRequires: python3-six
 BuildRequires: python3-oslo-serialization
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslo-i18n
