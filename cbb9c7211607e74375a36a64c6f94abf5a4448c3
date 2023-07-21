@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b7eee89_7cb70dce",
+        "filename": "python-heatclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-21T08:56:12Z",
+      "side": 1,
+      "message": "we can remove it",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 51
+      },
+      "revId": "cbb9c7211607e74375a36a64c6f94abf5a4448c3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
